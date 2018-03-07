@@ -23,9 +23,9 @@
         "visitUuid"
     ],
     "config": {
+        "showFormsDate": false,
         "hideConditions": false,
-        "enableRadiologyOrderOptions":["Urgent","NeedsPrint"],
-        "quickPrints":false,
+        "quickPrints":true,
         "networkConnectivity" : {
             "showNetworkStatusMessage": false,
             "networkStatusCheckInterval": 20000,
@@ -36,50 +36,30 @@
             ]
         },
     	"diagnosisStatus": "Inactive",
-            "program": {
-                "patientInformation": {
-                    "ageLimit": 100
-                },
-                "ID_Number": {
-                    "required" : true
-                },
-                "Co-morbidites": {
-                    "excludeFrom": ["HIV Program"]
-                },
-                "Doctor": {
-                    "excludeFrom": ["TB Program"]
-                }
-            },
-            "patientContext": {
-        		"programAttributes": [
-            		"Id_Number",
-            		"Doctor",
-            		"Stage"
-        		],
-        		"personAttributes": [
-            		"class",
-            		"caste"
-        		],
-        		"additionalPatientIdentifiers": [
-           			"National ID"
-       		],
-        		"preferredIdentifier": "Id_Number"
+        "patientContext": {
+        "personAttributes": [
+                "Número de Identificación",
+            	"Tipo de identificación",
+                "Municipio"
+                ]
     	},
         "obsIgnoreList": [
             "REGISTRATION FEES",
             "COMMENTS",
             "Patient file"
         ],
-        "otherInvestigationsMap": {
-            "Radiology": "Radiology Order",
-            "Endoscopy": "Endoscopy Order"
-        },
         "allowConsultationWhenNoOpenVisit": false,
-        "defaultVisitType": "OPD",
+        "defaultVisitType": "Examen EEG",
         "visitTypeForRetrospectiveEntries": "Special OPD",
         "maxConceptSetLevels": 3,
         "allowOnlyCodedDiagnosis": false,
         "conceptSetUI": {
+            "Revisión": {
+                "allowAddMore": true
+            },
+            "Medicamentos actuales" :{
+                "multiSelect" : true
+            },
             "Chief Complaint Data": {
                 "autocomplete":true,
                 "codedConceptName":"Chief Complaint",

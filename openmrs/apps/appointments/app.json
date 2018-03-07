@@ -8,12 +8,12 @@
     }
   ],
   "config": {
-    "enableSpecialities": true,
+    "enableSpecialities": false,
     "startOfWeek": 2,
     "weekStart": "isoWeek",
     "calendarSlotDuration": "00:30",
     "calendarSlotLabelInterval": "01:00",
-    "startOfDay":"09:00",
+    "startOfDay":"07:00",
     "endOfDay":"19:00",
     "printListViewTemplateUrl": "/bahmni_config/openmrs/apps/appointments/printListView.html",
     "enableServiceTypes": false,

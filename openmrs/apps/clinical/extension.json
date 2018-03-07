@@ -11,39 +11,6 @@
     "order": 1,
     "requiredPrivilege": "app:clinical:observationTab"
   },
-  "diagnosis": {
-    "id": "bahmni.clinical.consultation.diagnosis",
-    "extensionPointId": "org.bahmni.clinical.consultation.board",
-    "type": "link",
-    "label": "Diagnosis",
-    "translationKey":"DIAGNOSIS_BOARD_LABEL_KEY",
-    "url": "diagnosis",
-    "icon": "fa-user-md",
-    "order": 2,
-    "requiredPrivilege": "app:clinical:diagnosisTab"
-  },
-  "disposition": {
-    "id": "bahmni.clinical.consultation.disposition",
-    "extensionPointId": "org.bahmni.clinical.consultation.board",
-    "type": "link",
-    "label": "Disposition",
-    "translationKey":"DISPOSITION_BOARD_LABEL_KEY",
-    "url": "disposition",
-    "icon": "fa-user-md",
-    "order": 3,
-    "requiredPrivilege": "app:clinical:dispositionTab"
-  },
-  "consultationSummary": {
-    "id": "bahmni.clinical.consultation.summary",
-    "extensionPointId": "org.bahmni.clinical.consultation.board",
-    "type": "link",
-    "label": "Consultation",
-    "translationKey":"CONSULTATION_BOARD_LABEL_KEY",
-    "url": "consultation",
-    "icon": "fa-user-md",
-    "order": 5,
-    "requiredPrivilege": "app:clinical:consultationTab"
-  },
   "bahmniClinicalOrdersPending": {
     "id": "bahmni.clinical.orders.pending",
     "extensionPointId": "org.bahmni.clinical.orders",
@@ -60,63 +27,11 @@
     "type": "config",
     "extensionParams": {
       "searchHandler": "emrapi.sqlSearch.activePatients",
-      "translationKey": "MODULE_LABEL_ACTIVE_KEY",
+      "translationKey": "MODULE_LABEL_ACTIVE_PATIENTS_TO_CHECK",
       "forwardUrl": "#/default/patient/{{patientUuid}}/dashboard"
     },
     "label": "Active",
     "order": 1,
-    "requiredPrivilege": "app:clinical"
-  },
-  "bahmniClinicalPatientsSearchActivePatientsForPrograms": {
-    "id": "bahmni.clinical.patients.search.activePatients",
-    "extensionPointId": "org.bahmni.patient.search",
-    "type": "config",
-    "extensionParams": {
-      "searchHandler": "emrapi.sqlSearch.activePatients",
-      "translationKey": "MODULE_LABEL_PROGRAMS_KEY",
-      "forwardUrl": "#/default/patient/{{patientUuid}}/consultationContext"
-    },
-    "label": "Active",
-    "order": 1,
-    "requiredPrivilege": "app:clinical"
-  },
-  "bahmniClinicalPatientsASearchActivePatientsByProvider": {
-    "id": "bahmni.clinical.patients.search.activePatientsByProvider",
-    "extensionPointId": "org.bahmni.patient.search",
-    "type": "config",
-    "extensionParams": {
-      "searchHandler": "emrapi.sqlSearch.activePatientsByProvider",
-      "translationKey": "MODULE_LABEL_MY_PATIENTS_KEY",
-      "forwardUrl": "#/default/patient/{{patientUuid}}/dashboard"
-    },
-    "label": "Active",
-    "order": 2,
-    "requiredPrivilege": "app:clinical"
-  },
-  "bahmniClinicalPatientsSearchOPDActivePatientsByProvider": {
-    "id": "bahmni.clinical.patients.search.OPDActivePatientsByProvider",
-    "extensionPointId": "org.bahmni.patient.search",
-    "type": "config",
-    "extensionParams": {
-      "searchHandler": "emrapi.sqlSearch.activePatientsByProvider",
-      "translationKey": "MODULE_LABEL_OPD_1_KEY",
-      "forwardUrl": "#/default/patient/{{patientUuid}}/consultationContext"
-    },
-    "label": "OPD-1",
-    "order": 3,
-    "requiredPrivilege": "app:clinical"
-  },
-  "activePatientsByLocation": {
-    "id": "bahmni.clinical.patients.search.activePatientsByLocation",
-    "extensionPointId": "org.bahmni.patient.search",
-    "type": "config",
-    "extensionParams": {
-      "searchHandler": "emrapi.sqlSearch.activePatientsByLocation",
-      "translationKey": "MODULE_LABEL_ACTIVE_PATIENTS_BY_LOCATION",
-      "forwardUrl": "#/default/patient/{{patientUuid}}/dashboard"
-    },
-    "label": "Active",
-    "order": 4,
     "requiredPrivilege": "app:clinical"
   },
   "bahmniClinicalPatientsSearchAllPatients": {
@@ -128,30 +43,30 @@
       "forwardUrl": "#/default/patient/{{patientUuid}}/dashboard"
     },
     "label": "All",
-    "order": 5,
-    "requiredPrivilege": "app:clinical"
-  },
-  "bahmniClinicalConceptSetGroupObservationsHistory": {
-    "id": "bahmni.clinical.conceptSetGroup.observations.history",
-    "extensionPointId": "org.bahmni.clinical.conceptSetGroup.observations",
-    "type": "config",
-    "extensionParams": {
-      "conceptName": "History and Examination",
-      "default": true
-    },
-    "order": 1,
-    "requiredPrivilege": "app:clinical:history"
-  },
-  "bahmniClinicalConceptSetGroupObservationsVitals": {
-    "id": "bahmni.clinical.conceptSetGroup.observations.vitals",
-    "extensionPointId": "org.bahmni.clinical.conceptSetGroup.observations",
-    "type": "config",
-    "extensionParams": {
-      "default": true,
-      "conceptName": "Vitals"
-    },
     "order": 2,
     "requiredPrivilege": "app:clinical"
+  },
+  "bahmniClinicalConceptSetGroupObservationsExamenEEG": {
+    "id": "bahmni.clinical.conceptSetGroup.observations.examenEEG",
+    "extensionPointId": "org.bahmni.clinical.conceptSetGroup.observations",
+    "type": "config",
+    "extensionParams": {
+      "conceptName": "Examen EEG",
+      "default": false
+    },
+    "order": 0,
+    "requiredPrivilege": "app:clinical:history"
+  },
+  "bahmniClinicalConceptSetGroupObservationsRevisionExamenEEG": {
+    "id": "bahmni.clinical.conceptSetGroup.observations.revisionExamenEEG",
+    "extensionPointId": "org.bahmni.clinical.conceptSetGroup.observations",
+    "type": "config",
+    "extensionParams": {
+      "conceptName": "Revisión examen EEG",
+      "default": false
+    },
+    "order": 2,
+    "requiredPrivilege": "app:clinical:history"
   },
   "bahmniClinicalConceptSetGroupObservationsSecondVitals": {
     "id": "bahmni.clinical.conceptSetGroup.observations.secondVitals",
@@ -168,71 +83,5 @@
     },
     "order": 3,
     "requiredPrivilege": "app:clinical"
-  },
-  "bahmniClinicalConceptSetGroupObservationsObstetrics": {
-    "id": "bahmni.clinical.conceptSetGroup.observations.obstetrics",
-    "extensionPointId": "org.bahmni.clinical.conceptSetGroup.observations",
-    "type": "config",
-    "extensionParams": {
-      "conceptName": "Obstetrics"
-    },
-    "order": 4,
-    "requiredPrivilege": "app:clinical"
-  },
-  "bahmniClinicalConceptSetGroupObservationsGynaecology": {
-    "id": "bahmni.clinical.conceptSetGroup.observations.gynaecology",
-    "extensionPointId": "org.bahmni.clinical.conceptSetGroup.observations",
-    "type": "config",
-    "extensionParams": {
-      "conceptName": "Gynaecology"
-    },
-    "order": 5,
-    "requiredPrivilege": "app:clinical"
-  },
-  "bahmniClinicalConceptSetGroupObservationsDischargeSummary": {
-    "id": "bahmni.clinical.conceptSetGroup.observations.dischargeSummary",
-    "extensionPointId": "org.bahmni.clinical.conceptSetGroup.observations",
-    "type": "config",
-    "extensionParams": {
-      "conceptName": "Discharge Summary"
-    },
-    "order": 6,
-    "requiredPrivilege": "Discharge Summary"
-  },
-  "bahmniClinicalBillingTreatment": {
-    "id": "bahmni.clinical.billing.treatment",
-    "extensionPointId": "org.bahmni.clinical.consultation.board",
-    "type": "link",
-    "label": "Medications",
-    "translationKey":"MEDICATIONS_BOARD_LABEL_KEY",
-    "extensionParams":{
-      "tabConfigName": "allMedicationTabConfig"
-    },
-    "url": "treatment",
-    "icon": "fa-user-md",
-    "order": 7,
-    "requiredPrivilege": "app:clinical:treatmentTab"
-  },
-  "bahmniClinicalConsultationOrders": {
-    "id": "bahmni.clinical.consultation.orders",
-    "extensionPointId": "org.bahmni.clinical.consultation.board",
-    "type": "link",
-    "label": "Orders",
-    "translationKey":"ORDERS_BOARD_LABEL_KEY",
-    "url": "orders",
-    "icon": "icon-user-md",
-    "order": 6,
-    "requiredPrivilege": "app:clinical:ordersTab"
-  },
-  "bahmniClinicalConsultationBacteriology": {
-    "id": "bahmni.clinical.consultation.bacteriology",
-    "extensionPointId": "org.bahmni.clinical.consultation.board",
-    "type": "link",
-    "label": "Bacteriology",
-    "translationKey":"BACTERIOLOGY_BOARD_LABEL_KEY",
-    "url": "bacteriology",
-    "icon": "icon-user-md",
-    "order": 7,
-    "requiredPrivilege": "app:clinical:bacteriologyTab"
   }
 }

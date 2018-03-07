@@ -18,68 +18,33 @@
         ],
         "config" : {
             "patientInformation": {
-                "additionalPatientInformation": {
-                    "title": "Additional Patient Information",
-                    "attributes": [
-                        "distanceFromCenter",
-                        "isUrban",
-                        "cluster",
-                        "RationCard",
-                        "familyIncome",
-                        "debt",
-                        "cluster"
-                    ]
+                "defaults":  {
+                    "Tipo de identificación": "Tarjeta de identidad",
+                    "Municipio": "Popayán"
                 },
                 "hidden": {
                     "attributes": [
-                        "primaryContact"
+                        ""
                     ]
-                },
-                "defaults":  {
-                    "class": "General",
-                    "landHolding": 2
                 }
             },
             "addressHierarchy": {
-                "showAddressFieldsTopDown": false,
-                "strictAutocompleteFromLevel": "stateProvince"
-            },
-            "relationshipTypeMap": {
-                "Doctor":"provider",
-                "Parent":"patient"
+                "showAddressFieldsTopDown": true,
+                "strictAutocompleteFromLevel": ""
             },
 
-            "autoCompleteFields":["familyName", "caste"],
             "defaultIdentifierPrefix": "GAN",
             "defaultVisitType": "OPD",
             "searchByIdForwardUrl": "/patient/{{patientUuid}}",
-            "showMiddleName": true,
+            "showMiddleName": false,
             "showLastName": true,
             "isLastNameMandatory": true,
-            "showBirthTime": true,
+            "showBirthTime": false,
             "showCasteSameAsLastNameCheckbox": false,
-            "printOptions": [
-                {
-                    "translationKey": "REGISTRATION_PRINT_REG_CARD_LOCAL_KEY",
-                    "templateUrl": "/bahmni_config/openmrs/apps/registration/registrationCardLayout/print_local.html",
-                    "shortcutKey": "l"
-                },
-                {
-                    "translationKey": "REGISTRATION_PRINT_REG_CARD_KEY",
-                    "templateUrl": "/bahmni_config/openmrs/apps/registration/registrationCardLayout/print.html",
-                    "shortcutKey": "p"
-                },
-                {
-                    "translationKey": "REGISTRATION_PRINT_SUPPLEMENTAL_PAPER",
-                    "templateUrl": "/bahmni_config/openmrs/apps/registration/supplementalPaperLayout/print.html",
-                    "shortcutKey": "r"
-                },
-                {
-                    "translationKey": "REGISTRATION_PRINT_WITH_BARCODE",
-                    "templateUrl": "/bahmni_config/openmrs/apps/registration/registrationCardLayout/printWithBarcode.html",
-                    "shortcutKey": "c"
-                }
-            ],
+            "showEnterID": false,
+            "mandatoryPersonAttributes": ["Tipo de identificación", "Número de Identificación","Municipio", "Dirección"],
+            "disablePhotoCapture": true,
+            
             "conceptSetUI": {
                 "REGISTRATION FEES": {
                     "required": true,
@@ -93,24 +58,28 @@
                 }
             },
             "fieldValidation" : {
-                "primaryContact" : {"pattern" : "[0-9]{8,10}", "errorMessage" : "Should be 12 characters starting with 91 (country code)"},
-                "landHolding" : {"pattern" : "[0-9]{0,3}", "errorMessage" : "Should be between 1 to 999 acres"},
-                "familyName" : {"pattern" : "[a-zA-Z]{0,}", "errorMessage" : "Should contain characters"},
-                "givenName" : {"pattern" : "[a-zA-Z]{0,}", "errorMessage" : "Should contain characters"},
-                "middleName" : {"pattern" : "[a-zA-Z]{0,}", "errorMessage" : "Should contain characters"},
-                "address1" : {"pattern" : "[a-zA-Z0-9]{3}", "errorMessage" : "Should contain 3 characters"}
+                "familyName" : {"pattern" : "[a-zA-Z]{0,}", "errorMessage" : "Apellidos. No puede iniciar con un número."},
+                "givenName" : {"pattern" : "[a-zA-Z]{0,}", "errorMessage" : "Nombres. No puede iniciar con un número."}
             },
             "patientSearch": {
-                "address": {
-                    "label": "Rural Ward",
-                    "placeholder": "Enter ward",
-                    "field": "address2"
-                },
                 "customAttributes": {
-                    "label": "रुग्णाचे नाव",
-                    "placeholder": "रुग्णाचे नाव",
-                    "fields": ["givenNameLocal", "middleNameLocal", "familyNameLocal"]
+                    "label": "Número de identificación",
+                    "placeholder": "Ingrese número identificación",
+                    "fields": ["Número de Identificación"]
                 }
-            }
+            },
+            "patientSearchResults": {
+                "personAttributes": {
+                    "fields": ["Número de Identificación","Celular"]
+                }
+            },
+            "forwardUrlsForVisitTypes": [
+                {
+                    "visitType": "Examen EEG",
+                    "forwardUrl": "../clinical/#/default/patient/{{patientUuid}}/dashboard/concept-set-group/observations",
+                    "translationKey": "Ir a examen EEG activo",
+                    "shortcutKey": ""
+                }
+            ]
         }
 }
