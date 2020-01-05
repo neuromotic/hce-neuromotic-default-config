@@ -115,11 +115,7 @@
                 ],
                 "Pain management given": true,
                 "Safe Abortion, Remarks": "Remarks",
-                "Malaria, Death Date": "2015-12-01",
-		"Trazado de fondo": "EEG DE VIGILIA - En las regiones posteriores se registró una actividad Alfa de 8-10 CPS y de 40-80 Mv de Amplitud bien organizada y regulada, y reactiva a la apertura ocular. En las regiones anteriores se observa una actividad beta de 19-21 CPS y de 5-10 Mv de amplitud.",
-		"Anormalidades": "Durante el trazado no se registró actividad paroxística, actividad focal ni asimetrías significativas.",
-		"Procedimientos de activación": "La ELI se realizó con frecuencias progresivas entre 2-30 CPS sn desorganización de la actividad de fondo. Durante la estimulación sonora se observó buena respuesta. La hiperventilación desorganizó el trazado de fondo.",
-		"Conclusión": "Electroencefalograma de vigilia normal para la edad del paciente."
+                "Malaria, Death Date": "2015-12-01"
             }
         },
         "visitPage": {

@@ -33,7 +33,7 @@
                     "title": null,
                     "maximumNoOfVisits": 10000
                 },
-                "formGroup": ["Examen EEG", "Revisión examen EEG"],
+                "formGroup": ["Examen EEG", "Revisión examen EEG", "Reporte EEG"],
                 "translationKey": "DASHBOARD_TITLE_FORMS_DISPLAY_CONTROL_KEY"
             }
         }
